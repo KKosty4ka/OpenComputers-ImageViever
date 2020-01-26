@@ -12,7 +12,10 @@ for i = 1, #image do
     local color = pixel.color
     
     if (x <= resX) and (y <= resY) then
-        gpu.setForeground(color)
-        gpu.set(x, y, "█")
+        ch, col, _, _, _ = gpu.get(x, y)
+        if (ch ~= "█") or (col ~= color) then
+            gpu.setForeground(color)
+            gpu.set(x, y, "█")
+        end
     end
 end
