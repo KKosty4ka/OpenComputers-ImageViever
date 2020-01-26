@@ -9,6 +9,8 @@ local image = {{x = 50, y = 17, color = 0x7e0121}, {x = 98, y = 49, color = 0xff
 local screen = gpu.getScreen()
 local _, addres, _, _, _, _ = ep(120, "touch")
 gpu.bind(addres)
+print(addres)
+print(screen)
 
 
 for i = 1, #image do
